@@ -131,7 +131,7 @@ Task("Build")
     .IsDependentOn("BuildAssemblyInfo")
     .Does(() =>
 {
-    MSBuild(solution, s => { s.Configuration = configuration; });
+    DotNetBuild(solution, s => { s.Configuration = configuration; });
 });
 
 Task("Stage")
